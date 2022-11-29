@@ -15,51 +15,51 @@ public class DevNestProject {
 		BufferedReader inputFile = new BufferedReader(new FileReader("input_example.csv"));
 		PrintWriter outputFile = new PrintWriter("output_example.csv");
 
-        // removing the header
-        inputFile.readLine();
-        String inputLine = inputFile.readLine(); 
+        	// removing the header
+		inputFile.readLine();
+		String inputLine = inputFile.readLine(); 
 
-        // HashSet for unique elements (remove duplicates)
-        HashSet<String> hs = new HashSet<String>();
-        List<List<String>> data = new ArrayList<>();
-        HashMap<Character, List<String>> group = new HashMap();
+		// HashSet for unique elements (remove duplicates)
+		HashSet<String> hs = new HashSet<String>();
+		List<List<String>> data = new ArrayList<>();
+		HashMap<Character, List<String>> group = new HashMap();
 
-        while(inputLine != null)
-        {
-        	List<String> lineData = Arrays.asList(inputLine.split(", "));
-        	data.add(lineData);
+		while(inputLine != null)
+		{
+			List<String> lineData = Arrays.asList(inputLine.split(", "));
+			data.add(lineData);
 
-        	for (List<String> list : data) {
-    		
-	        	for (String record : list) {
+			for (List<String> list : data) {
 
-                    // an attempt for the 3rd point :D
-	        		// Character firstLetter = record.charAt(0);
+				for (String record : list) {
 
-		        	// if (group.containsKey(firstLetter)) {
-		        	// 	group.get(firstLetter).add(record);
-		        	// } else {
-		        	// 	group.put(firstLetter, Arrays.asList(record));
-		        	// }
+			   		 // an attempt for the 3rd point :D
+					// Character firstLetter = record.charAt(0);
 
-	        		if (hs.add(record)){
-		        		outputFile.println(record);
-		        	}
+					// if (group.containsKey(firstLetter)) {
+					// 	group.get(firstLetter).add(record);
+					// } else {
+					// 	group.put(firstLetter, Arrays.asList(record));
+					// }
 
-	        	}
-        	}
+					if (hs.add(record)){
+						outputFile.println(record);
+					}
 
-        	inputLine = inputFile.readLine();
-              
-        }
+				}
+			}
 
-        // clearing the ouput_example file 
-        outputFile.flush();
-       
-        inputFile.close();
-        outputFile.close();
-          
-        System.out.println("See the results.");
+			inputLine = inputFile.readLine();
+
+		}
+
+		// clearing the ouput_example file 
+		outputFile.flush();
+
+		inputFile.close();
+		outputFile.close();
+
+		System.out.println("See the results.");
 
 	}
 
