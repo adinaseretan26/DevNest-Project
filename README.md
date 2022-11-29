@@ -2,5 +2,5 @@
 
 To run the app:
   1. Open Windows cmd
-  2. javac DevNestProject.java
-  3. java DevNestProject
+  2. run javac DevNestProject.java
+  3. run java DevNestProject
